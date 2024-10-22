@@ -1,0 +1,13 @@
+name: github-pages-build
+run-name: ${{ github.actor }} is building on github-pages-build 🚀
+on: [push]
+jobs:
+  Github-Pages-Build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: pwd
+      - run: npm --version
+      - run: node --version
+      - run: pnpm --version
+      - run: pnpm i
+      - run: pnpm build
