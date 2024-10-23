@@ -1,0 +1,36 @@
+name: github-pages-build
+run-name: ${{ github.actor }} is building on github-pages-build 🚀
+on: [push]
+
+permissions:
+  contents: write 
+
+jobs:
+  Github-Pages-Build:
+    name: 打包本地项目到 github pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: 读取虚拟机信息
+        run: pwd
+      - run: npm --version
+      - run: node --version
+
+      - name: 读取仓库内容
+        uses: actions/checkout@v4
+
+      - name: 安装pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9.11.0
+      - run: pnpm --version
+
+      - name: 安装依赖和项目打包
+        run: | 
+          pnpm i
+          pnpm build
+
+      - name: 项目部署到 github pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: dist

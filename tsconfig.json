@@ -1,8 +1,7 @@
 {
-  "extends": "./tsconfig.base.json",
-  "compilerOptions": {
-    "moduleResolution": "Node"
-  },
-  "include": ["vite.config.ts"],
-  "exclude": ["node_modules", "dist", "src"]
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.node.json" },
+    { "path": "./tsconfig.src.json" }
+  ]
 }
