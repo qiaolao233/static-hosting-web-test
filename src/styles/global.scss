@@ -1,12 +1,35 @@
-@import url('./variable.scss');
-
 :root {
-  box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: calc(0.5em + 1vw);
+    // 小技巧 calc(0.5em + 0vw) 能够实现 8px 的字体大小
+    // font-size: calc(0.5em + 0vw);
 }
 
-* {
-  &::before,
-  &::after {
+*,
+::before,
+::after {
     box-sizing: inherit;
-  }
+}
+
+body {
+    background-color: #eee;
+    font-family: Helvetica, Arial, sans-serif;
+    line-height: 1.2;
+
+    // 猫头鹰 选择器
+    * + * {
+        margin-top: 1.5em;
+    }
+}
+
+.clearfix::before,
+.clearfix::after {
+    content: ' ';
+    // 防止容器子元素外边距折叠
+    display: table;
+}
+
+.clearfix::after {
+    // 清除浮动
+    clear: both;
 }

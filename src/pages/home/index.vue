@@ -2,7 +2,7 @@
 
 <template>
   <div class="home-w">
-    <div class="home-container"></div>
+    <div class="home-container">wmq</div>
   </div>
 </template>
 
@@ -15,7 +15,7 @@
 
 .home-container {
   margin: 0 auto;
-  width: 1000px;
+  max-width: 1000px;
   height: 100%;
   background-color: pink;
 }

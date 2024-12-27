@@ -1,4 +1,5 @@
 /** @type {import("prettier").Config} */
+
 const config = {
   singleQuote: true,
   trailingComma: 'all',
@@ -14,6 +15,10 @@ const config = {
       files: '.prettierrc',
       options: { parser: 'json' },
     },
+    {
+      files: ["*.css", "*.scss"],
+      options: { tabWidth: 4, },
+    }
   ],
 };
 
