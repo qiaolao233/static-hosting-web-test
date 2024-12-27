@@ -1,0 +1,9 @@
+* text eol=lf
+*.txt text eol=lf
+
+* text=auto eol=lf
+public/assets/*.png -text
+public/assets/*.jpg -text
+
+# Windows
+*.bat text eol=crlf
