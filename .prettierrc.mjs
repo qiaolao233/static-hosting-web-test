@@ -13,7 +13,7 @@ const config = {
     {
       files: '.prettierrc',
       options: { parser: 'json' },
-    }
+    },
   ],
 };
 
