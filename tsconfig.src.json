@@ -3,7 +3,11 @@
   "compilerOptions": {
     "moduleResolution": "Bundler",
     "lib": ["ESNext", "DOM"],
-    "noEmit": true
+    "noEmit": true,
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["./*"] // 设置路径别名，例如：@/components 会被解析为 src/components
+    }
   },
   "include": ["src"]
 }
