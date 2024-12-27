@@ -24,6 +24,9 @@ importers:
       eslint:
         specifier: ^8.57.1
         version: 8.57.1
+      pinia:
+        specifier: ^2.3.0
+        version: 2.3.0(typescript@5.6.2)(vue@3.5.5(typescript@5.6.2))
       postcss:
         specifier: ^8.4.49
         version: 8.4.49
@@ -729,6 +732,9 @@ packages:
   '@vue/compiler-ssr@3.5.5':
     resolution: {integrity: sha512-oFasHnpv/upubjJEmqiTKQYb4qS3ziJddf4UVWuFw6ebk/QTrTUc+AUoTJdo39x9g+AOQBzhOU0ICCRuUjvkmw==}
 
+  '@vue/devtools-api@6.6.4':
+    resolution: {integrity: sha512-sGhTPMuXqZ1rVOk32RylztWkfXTRhuS7vgAKv0zjqk8gbsHkJ7xfFf+jbySxt7tWObEJwyKaHMikV/WGDiQm8g==}
+
   '@vue/reactivity@3.5.5':
     resolution: {integrity: sha512-V4tTWElZQhT73PSK3Wnax9R9m4qvMX+LeKHnfylZc6SLh4Jc5/BPakp6e3zEhKWi5AN8TDzRkGnLkp8OqycYng==}
 
@@ -1146,6 +1152,15 @@ packages:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
 
+  pinia@2.3.0:
+    resolution: {integrity: sha512-ohZj3jla0LL0OH5PlLTDMzqKiVw2XARmC1XYLdLWIPBMdhDW/123ZWr4zVAhtJm+aoSkFa13pYXskAvAscIkhQ==}
+    peerDependencies:
+      typescript: '>=4.4.4'
+      vue: ^2.7.0 || ^3.5.11
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   postcss-attribute-case-insensitive@7.0.1:
     resolution: {integrity: sha512-Uai+SupNSqzlschRyNx3kbCTWgY/2hcwtHEI/ej2LJWc9JJ77qKgGptd8DHwY1mXtZ7Aoh4z4yxfwMBue9eNgw==}
     engines: {node: '>=18'}
@@ -1465,6 +1480,17 @@ packages:
       sugarss:
         optional: true
       terser:
+        optional: true
+
+  vue-demi@0.14.10:
+    resolution: {integrity: sha512-nMZBOwuzabUO0nLgIcc6rycZEebF6eeUfaiQx9+WSk8e29IbLvPU9feI6tqW4kTo3hvoYAJkMh8n8D0fuISphg==}
+    engines: {node: '>=12'}
+    hasBin: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
         optional: true
 
   vue@3.5.5:
@@ -2052,6 +2078,8 @@ snapshots:
       '@vue/compiler-dom': 3.5.5
       '@vue/shared': 3.5.5
 
+  '@vue/devtools-api@6.6.4': {}
+
   '@vue/reactivity@3.5.5':
     dependencies:
       '@vue/shared': 3.5.5
@@ -2485,6 +2513,16 @@ snapshots:
   picomatch@2.3.1:
     optional: true
 
+  pinia@2.3.0(typescript@5.6.2)(vue@3.5.5(typescript@5.6.2)):
+    dependencies:
+      '@vue/devtools-api': 6.6.4
+      vue: 3.5.5(typescript@5.6.2)
+      vue-demi: 0.14.10(vue@3.5.5(typescript@5.6.2))
+    optionalDependencies:
+      typescript: 5.6.2
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+
   postcss-attribute-case-insensitive@7.0.1(postcss@8.4.49):
     dependencies:
       postcss: 8.4.49
@@ -2840,6 +2878,10 @@ snapshots:
       '@types/node': 22.5.5
       fsevents: 2.3.3
       sass: 1.83.0
+
+  vue-demi@0.14.10(vue@3.5.5(typescript@5.6.2)):
+    dependencies:
+      vue: 3.5.5(typescript@5.6.2)
 
   vue@3.5.5(typescript@5.6.2):
     dependencies:
