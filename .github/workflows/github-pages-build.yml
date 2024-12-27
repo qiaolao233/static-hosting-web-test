@@ -1,9 +1,13 @@
+# https://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html
 name: github-pages-build
 run-name: ${{ github.actor }} is building on github-pages-build 🚀
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 permissions:
-  contents: write 
+  contents: write
 
 jobs:
   Github-Pages-Build:
@@ -25,7 +29,7 @@ jobs:
       - run: pnpm --version
 
       - name: 安装依赖和项目打包
-        run: | 
+        run: |
           pnpm i
           pnpm build
 
