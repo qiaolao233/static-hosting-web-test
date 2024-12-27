@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import "./styles/global.scss";
+</script>
 
 <template>
   <header>
