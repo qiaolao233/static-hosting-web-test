@@ -46,5 +46,21 @@ defineExpose({
     border-radius: 0.2em;
     border: 1px solid #265559;
     background-color: #e0f0f2;
+
+    &--success {
+        color: #2f5926;
+        border-color: #2f5926;
+        background-color: #cfe8c9;
+    }
+    &--warning {
+        color: #594826;
+        border-color: #594826;
+        background-color: #e8dec9;
+    }
+    &--error {
+        color: #59262f;
+        border-color: #59262f;
+        background-color: #e8c9cf;
+    }
 }
 </style>
