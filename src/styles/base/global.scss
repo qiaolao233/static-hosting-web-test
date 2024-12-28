@@ -1,14 +1,17 @@
+// 通过继承实现 border-box
 :root {
     box-sizing: border-box;
-    font-size: calc(0.5em + 1vw);
-    // 小技巧 calc(0.5em + 0vw) 能够实现 8px 的字体大小
-    // font-size: calc(0.5em + 0vw);
 }
-
 *,
 ::before,
 ::after {
     box-sizing: inherit;
+}
+
+// 小技巧 calc(0.5em + 0vw) 能够实现 8px 的字体大小
+:root {
+    font-size: calc(0.5em + 1vw);
+    // font-size: calc(0.5em + 0vw);
 }
 
 body {
