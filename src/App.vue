@@ -3,5 +3,5 @@ import '@/styles/index.scss';
 </script>
 
 <template>
-  <RouterView />
+    <RouterView />
 </template>

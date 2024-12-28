@@ -1,3 +1,3 @@
 interface Window {
-  __wmq: string;
+    __wmq: string;
 }

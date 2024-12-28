@@ -1,9 +1,9 @@
 type TAppProduct = {
-  noServer: {
-    type: string;
-  }[];
-  usedServer: {
-    type: string;
-    serverBaseUrl: string;
-  }[];
+    noServer: {
+        type: string;
+    }[];
+    usedServer: {
+        type: string;
+        serverBaseUrl: string;
+    }[];
 };
