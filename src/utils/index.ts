@@ -1,1 +1,2 @@
-export const aaa = 1;
+export const wmqSleep = (delay = 1000) =>
+    new Promise((_) => setTimeout(_, delay));
