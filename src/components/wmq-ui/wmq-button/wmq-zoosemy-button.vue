@@ -1,5 +1,5 @@
 <template>
-    <button class="wmq-box-shadow-buttom">
+    <button class="wmq-zoosemy-button">
         <slot></slot>
     </button>
 </template>
@@ -11,7 +11,7 @@ defineSlots<{
 </script>
 
 <style scoped lang="scss">
-.wmq-box-shadow-buttom {
+.wmq-zoosemy-button {
     padding: 0.5em 0.7em;
     border-radius: 0.3em;
     font-size: 0.8rem;
