@@ -37,7 +37,7 @@ const closeMessage = () => {
     background-color: pink;
 
     h1 {
-        font-family: 'Kirang Haerang', cursive;
+        font-family: '寒蝉团圆体 Sans', cursive;
     }
 }
 </style>
