@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import WmqMessage from '@/components/wmq-ui/wmq-message/index.vue';
 import WmqButton from '@/components/wmq-ui/wmq-button/index.vue';
+import WmqBoxShadowButton from '@/components/wmq-ui/wmq-button/box-shadow-buttom.vue';
 import { ref } from 'vue';
 
 const messageRef = ref<InstanceType<typeof WmqMessage>>();
@@ -18,6 +19,9 @@ const closeMessage = () => {
             <h1>wmq - 个人网站</h1>
             <WmqButton @click="openMessage">弹出消息</WmqButton>
             <WmqButton @click="closeMessage">关闭消息</WmqButton>
+            <WmqBoxShadowButton @click="closeMessage">
+                关闭消息
+            </WmqBoxShadowButton>
         </div>
     </div>
     <WmqMessage content="提示" ref="messageRef" />
