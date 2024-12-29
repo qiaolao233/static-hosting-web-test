@@ -18,7 +18,6 @@ const closeMessage = () => {
         <div class="home-container">
             <h1>wmq - 个人网站</h1>
             <WmqButton @click="openMessage">弹出消息</WmqButton>
-            <WmqButton @click="closeMessage">关闭消息</WmqButton>
             <WmqBoxShadowButton @click="closeMessage">
                 关闭消息
             </WmqBoxShadowButton>

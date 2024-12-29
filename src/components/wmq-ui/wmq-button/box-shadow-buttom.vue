@@ -24,5 +24,8 @@ defineSlots<{
             inset 0 0 0.5em #124,
             inset 0 0.5em 1em rgba(0, 0, 0, 0.4);
     }
+    &:focus {
+        outline: none;
+    }
 }
 </style>
