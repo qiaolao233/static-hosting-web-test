@@ -15,7 +15,7 @@ const closeMessage = () => {
 <template>
     <div class="home-w">
         <div class="home-container">
-            <h1>wmq</h1>
+            <h1>wmq - 个人网站</h1>
             <WmqButton @click="openMessage">弹出消息</WmqButton>
             <WmqButton @click="closeMessage">关闭消息</WmqButton>
         </div>
@@ -35,5 +35,9 @@ const closeMessage = () => {
     max-width: 1000px;
     height: 100%;
     background-color: pink;
+
+    h1 {
+        font-family: 'Kirang Haerang', cursive;
+    }
 }
 </style>
