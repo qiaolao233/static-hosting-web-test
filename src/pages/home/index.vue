@@ -7,6 +7,7 @@ import WmqZoosemyFlatButton from '@/components/wmq-ui/wmq-button/wmq-zoosemy-fla
 import BackgroundImageBlead from '@/components/wmq-test/background-image-blend/index.vue';
 import ScratchesImg from '@/components/wmq-test/background-image-blend/scratches-img.vue';
 import MixBlendImg from '@/components/wmq-test/background-image-blend/mix-blend-img.vue';
+import WmqLoading from '@/components/wmq-ui/wmq-loading/index.vue';
 import { ref } from 'vue';
 
 const messageRef = ref<InstanceType<typeof WmqMessage>>();
@@ -29,8 +30,9 @@ const closeMessage = () => {
             <WmqFlatButton> 无用按钮 </WmqFlatButton>
             <WmqZoosemyFlatButton> 无用按钮 </WmqZoosemyFlatButton>
             <!-- <BackgroundImageBlead /> -->
-            <ScratchesImg />
-            <MixBlendImg />
+            <!-- <ScratchesImg /> -->
+            <!-- <MixBlendImg /> -->
+            <WmqLoading />
         </div>
     </div>
     <WmqMessage content="提示" ref="messageRef" />
