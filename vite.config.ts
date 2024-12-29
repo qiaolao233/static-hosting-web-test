@@ -15,9 +15,12 @@ export default defineConfig({
         preprocessorOptions: {
             scss: {
                 api: 'modern-compiler',
-                additionalData: ['@use "@/styles/mixin.scss";'].join('\n'),
+                additionalData: ['@use "@/styles/scss/mixin.scss";'].join('\n'),
             },
         },
     },
     base: './',
+    build: {
+        cssCodeSplit: false,
+    },
 });

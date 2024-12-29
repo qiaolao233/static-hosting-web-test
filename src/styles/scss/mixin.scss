@@ -12,3 +12,17 @@
     -webkit-line-clamp: $line-clamp;
     overflow: hidden;
 }
+
+@mixin clearfix {
+    &::before,
+    &::after {
+        content: ' ';
+        // 防止容器子元素外边距折叠
+        display: table;
+    }
+
+    &::after {
+        // 清除浮动
+        clear: both;
+    }
+}

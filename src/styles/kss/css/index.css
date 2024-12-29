@@ -1,2 +1,5 @@
+@import url('./reset.css');
+@import url('./global.css');
+@import url('./variable.css');
 @import url('./kss-media.css');
 @import url('./kss-button.css');
