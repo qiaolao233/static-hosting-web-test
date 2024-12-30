@@ -47,9 +47,8 @@ const closeMessage = async () => {
     props.onDestroy?.();
 };
 onMounted(async () => {
-    setTimeout(() => {
-        closeMessage();
-    }, 2000);
+    await wmqSleep(props.closeTime ?? 2000);
+    closeMessage();
 });
 </script>
 

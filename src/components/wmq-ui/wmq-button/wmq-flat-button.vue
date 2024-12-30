@@ -1,14 +1,28 @@
-<template>
-    <button class="wmq-flat-buttom">
-        <slot></slot>
-    </button>
-</template>
-
 <script setup lang="ts">
+const { type = 'button' } = defineProps<{
+    type?: 'reset' | 'submit' | 'button' | undefined;
+}>();
+const emit = defineEmits<{
+    /**
+     * 使用具名元组语法
+     */
+    click: [event: MouseEvent];
+    // (e: 'click', event: MouseEvent): void;
+}>();
 defineSlots<{
     default: () => any;
 }>();
 </script>
+
+<template>
+    <button
+        :type="type"
+        class="wmq-flat-buttom"
+        @click="(event) => emit('click', event)"
+    >
+        <slot></slot>
+    </button>
+</template>
 
 <style scoped lang="scss">
 .wmq-flat-buttom {

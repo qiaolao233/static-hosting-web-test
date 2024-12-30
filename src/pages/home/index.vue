@@ -1,13 +1,26 @@
 <script setup lang="ts">
 import WmqFlatButton from '@/components/wmq-ui/wmq-button/wmq-flat-button.vue';
+import { $wmqMessage } from '@/components/wmq-ui/wmq-message';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const onNoServer = () => {
+    router.push('/no-server');
+};
+const onUsedServer = () => {
+    $wmqMessage({ content: '服务器模式未开发', closeTime: 1000 });
+};
 </script>
 
 <template>
     <div class="home-w">
         <div class="home-container">
-            <form class="form-one">
-                <WmqFlatButton>无服务器模式</WmqFlatButton>
-                <WmqFlatButton>有服务器模式</WmqFlatButton>
+            <form class="form-one" @submit.prevent>
+                <WmqFlatButton @click="onNoServer">无服务器模式</WmqFlatButton>
+                <WmqFlatButton @click="onUsedServer">
+                    有服务器模式
+                </WmqFlatButton>
             </form>
         </div>
     </div>

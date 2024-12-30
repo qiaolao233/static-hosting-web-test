@@ -35,7 +35,6 @@ export const $wmqMessage = (props: TMessageProps) => {
     messageInstances.forEach((item) => {
         verticalOffset += (item.el?.offsetHeight ?? 0) + 16;
     });
-    console.log(verticalOffset, '---------------->verticalOffset');
     const vnode = h(WmqMessageMethod, {
         ...props,
         id,
