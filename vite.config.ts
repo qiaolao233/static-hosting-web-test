@@ -3,6 +3,10 @@ import { fileURLToPath, URL } from 'node:url';
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 
+/**
+ * @description 解決 vite 打包後檔名出現中文亂碼的問題
+ */
+// https://israynotarray.com/other/20220928/1377668819/
 const INVALID_CHAR_REGEX = /[\x00-\x1F\x7F<>*#"{}|^[\]`;?:&=+$,]/g;
 const DRIVE_LETTER_REGEX = /^[a-z]:/i;
 
