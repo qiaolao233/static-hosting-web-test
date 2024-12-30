@@ -9,6 +9,17 @@ const routes: Readonly<RouteRecordRaw[]> = [
     {
         path: '/no-server',
         component: () => import('@/pages/no-server/index.vue'),
+        children: [
+            {
+                path: '/no-server',
+                redirect: '/no-server/game',
+            },
+            {
+                path: 'game',
+                component: () =>
+                    import('@/pages/no-server/no-server-game/index.vue'),
+            },
+        ],
     },
     {
         path: '/used-server',
