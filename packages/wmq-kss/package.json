@@ -1,0 +1,20 @@
+{
+    "name": "wmq-kss",
+    "version": "1.0.0",
+    "description": "wmq 开发 的 css 模式库",
+    "main": "kss/css/index.css",
+    "scripts": {
+        "kss": "kss --config kss-config.json",
+        "preopenkss": "start http://127.0.0.1:9527/kss-styles",
+        "openkss": "http-server -p 9527",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "kss"
+    ],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "kss": "^3.1.0"
+    }
+}

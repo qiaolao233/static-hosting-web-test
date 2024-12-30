@@ -1,0 +1,6 @@
+{
+    "title": "wmq-ui-styles",
+    "source": ["./kss"],
+    "destination": "kss-styles/",
+    "css": ["../kss/css/index.css"]
+}
