@@ -1,0 +1,28 @@
+@mixin one-line-ellipsis($width: 100%) {
+    width: $width;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin multiple-line-ellipsis($line-clamp, $width: 100%) {
+    width: $width;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line-clamp;
+    overflow: hidden;
+}
+
+@mixin clearfix {
+    &::before,
+    &::after {
+        content: ' ';
+        // 防止容器子元素外边距折叠
+        display: table;
+    }
+
+    &::after {
+        // 清除浮动
+        clear: both;
+    }
+}

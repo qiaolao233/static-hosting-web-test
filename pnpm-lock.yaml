@@ -30,9 +30,6 @@ importers:
       http-server:
         specifier: ^14.1.1
         version: 14.1.1
-      kss:
-        specifier: ^3.1.0
-        version: 3.1.0
       pinia:
         specifier: ^2.3.0
         version: 2.3.0(typescript@5.6.2)(vue@3.5.5(typescript@5.6.2))
@@ -58,8 +55,13 @@ importers:
         specifier: ^5.4.5
         version: 5.4.5(@types/node@22.5.5)(sass@1.83.0)
 
+  apps/wmq-project: {}
+
   packages/wmq-kss:
     devDependencies:
+      http-server:
+        specifier: ^14.1.1
+        version: 14.1.1
       kss:
         specifier: ^3.1.0
         version: 3.1.0

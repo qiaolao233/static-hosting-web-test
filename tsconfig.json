@@ -1,11 +1,4 @@
 {
-    "files": [],
-    "compilerOptions": {
-        "composite": true,
-        "incremental": true
-    },
-    "references": [
-        { "path": "./tsconfig.node.json" },
-        { "path": "./tsconfig.src.json" }
-    ]
+    "extends": "./tsconfig.base.json",
+    "compilerOptions": {}
 }
