@@ -8,6 +8,7 @@ import BackgroundImageBlead from '@/components/wmq-test/background-image-blend/i
 import ScratchesImg from '@/components/wmq-test/background-image-blend/scratches-img.vue';
 import MixBlendImg from '@/components/wmq-test/background-image-blend/mix-blend-img.vue';
 import WmqLoading from '@/components/wmq-ui/wmq-loading/index.vue';
+import WmqDialog from '@/components/wmq-ui/wmq-dialog/index.vue';
 import { ref } from 'vue';
 import { $wmqMessage } from '@/components/wmq-ui/wmq-message';
 const openMessage = () => {
@@ -16,6 +17,8 @@ const openMessage = () => {
     });
     // messageRef.value?.showMessage();
 };
+
+const visible = ref(false);
 </script>
 
 <template>
@@ -24,8 +27,10 @@ const openMessage = () => {
             <h1>wmq - 个人网站</h1>
             <WmqButton @click="openMessage">弹出消息</WmqButton>
             <WmqZoosemyButton> 关闭消息 </WmqZoosemyButton>
-            <WmqFlatButton> 无用按钮 </WmqFlatButton>
-            <WmqZoosemyFlatButton> 无用按钮 </WmqZoosemyFlatButton>
+            <WmqFlatButton @click="visible = true"> 打开弹窗 </WmqFlatButton>
+            <WmqZoosemyFlatButton @click="visible = false">
+                关闭弹窗
+            </WmqZoosemyFlatButton>
             <!-- <BackgroundImageBlead /> -->
             <!-- <ScratchesImg /> -->
             <!-- <MixBlendImg /> -->
@@ -33,6 +38,14 @@ const openMessage = () => {
         </div>
     </div>
     <!-- <WmqMessage content="提示" ref="messageRef" /> -->
+    <WmqDialog :visible="visible">
+        <template #title>
+            <div>标题</div>
+        </template>
+        <template #default>
+            <div>正文</div>
+        </template>
+    </WmqDialog>
 </template>
 
 <style scoped lang="scss">

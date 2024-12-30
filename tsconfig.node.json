@@ -2,6 +2,7 @@
     "extends": "./tsconfig.base.json",
     "compilerOptions": {
         "moduleResolution": "Node",
+        "types": ["node"],
         "noEmit": true
     },
     "include": ["vite.config.ts"]
