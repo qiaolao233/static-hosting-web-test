@@ -1,9 +1,9 @@
 {
-    "extends": "./tsconfig.base.json",
+    "extends": "../../tsconfig.base.json",
     "compilerOptions": {
         "moduleResolution": "Node",
         "types": ["node"],
         "noEmit": true
     },
-    "include": ["vite.config.ts"]
+    "include": ["vite.config.ts", "postcss.config.js"]
 }

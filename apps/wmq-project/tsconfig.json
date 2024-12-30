@@ -1,14 +1,7 @@
 {
-    "extends": "../../tsconfig.base.json",
-    "compilerOptions": {
-        "moduleResolution": "Bundler",
-        "lib": ["ESNext", "DOM"],
-        "types": [],
-        "noEmit": true,
-        "baseUrl": "src",
-        "paths": {
-            "@/*": ["./*"] // 设置路径别名，例如：@/components 会被解析为 src/components
-        }
-    },
-    "include": ["src"]
+    "files": [],
+    "references": [
+        { "path": "./tsconfig.src.json" },
+        { "path": "./tsconfig.node.json" }
+    ]
 }
