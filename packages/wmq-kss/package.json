@@ -1,5 +1,5 @@
 {
-    "name": "wmq-kss",
+    "name": "@wmq/wmq-kss",
     "version": "1.0.0",
     "description": "wmq 开发 的 css 模式库",
     "main": "kss/css/index.css",

@@ -1,6 +1,6 @@
 {
     "private": true,
-    "name": "wmq-project",
+    "name": "@wmq/wmq-project",
     "version": "1.0.0",
     "description": "",
     "type": "module",
