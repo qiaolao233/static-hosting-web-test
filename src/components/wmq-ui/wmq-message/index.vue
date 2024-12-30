@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { CSSProperties, ref } from 'vue';
+import { CSSProperties, onMounted, ref } from 'vue';
 import { TMessageProps } from './configs';
 import { wmqSleep } from '@/utils';
 
@@ -15,12 +15,9 @@ const divRef = ref<HTMLDivElement>();
 const transitionTime = 500;
 const styles = ref<CSSProperties>({
     top: '3em',
-    display: 'none',
+    display: 'block',
     transition: `${transitionTime / 1000}s`,
 });
-const showMessage = () => {
-    styles.value.display = 'block';
-};
 const closeMessage = async () => {
     if (!divRef.value) return;
     const outTop = divRef.value.offsetHeight;
@@ -28,11 +25,11 @@ const closeMessage = async () => {
     await wmqSleep(transitionTime);
     styles.value.display = 'none';
     styles.value.top = '3em';
+    props.onClose?.();
 };
-defineExpose({
-    styles,
-    showMessage,
-    closeMessage,
+onMounted(async () => {
+    await wmqSleep(props.closeTime ?? 1000);
+    closeMessage();
 });
 </script>
 

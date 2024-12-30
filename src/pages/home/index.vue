@@ -9,13 +9,12 @@ import ScratchesImg from '@/components/wmq-test/background-image-blend/scratches
 import MixBlendImg from '@/components/wmq-test/background-image-blend/mix-blend-img.vue';
 import WmqLoading from '@/components/wmq-ui/wmq-loading/index.vue';
 import { ref } from 'vue';
-
-const messageRef = ref<InstanceType<typeof WmqMessage>>();
+import { $wmqMessage } from '@/components/wmq-ui/wmq-message';
 const openMessage = () => {
-    messageRef.value?.showMessage();
-};
-const closeMessage = () => {
-    messageRef.value?.closeMessage();
+    $wmqMessage({
+        content: '提示',
+    });
+    // messageRef.value?.showMessage();
 };
 </script>
 
@@ -24,9 +23,7 @@ const closeMessage = () => {
         <div class="home-container">
             <h1>wmq - 个人网站</h1>
             <WmqButton @click="openMessage">弹出消息</WmqButton>
-            <WmqZoosemyButton @click="closeMessage">
-                关闭消息
-            </WmqZoosemyButton>
+            <WmqZoosemyButton> 关闭消息 </WmqZoosemyButton>
             <WmqFlatButton> 无用按钮 </WmqFlatButton>
             <WmqZoosemyFlatButton> 无用按钮 </WmqZoosemyFlatButton>
             <!-- <BackgroundImageBlead /> -->
@@ -35,7 +32,7 @@ const closeMessage = () => {
             <WmqLoading />
         </div>
     </div>
-    <WmqMessage content="提示" ref="messageRef" />
+    <!-- <WmqMessage content="提示" ref="messageRef" /> -->
 </template>
 
 <style scoped lang="scss">
