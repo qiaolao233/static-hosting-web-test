@@ -1,0 +1,5 @@
+# - 表示 数组
+# 告知 pnpm 当前存储库是 monorepo 项目，而且该项目有两个 workspace
+packages:
+    - 'apps/*'
+    - 'packages/*'
