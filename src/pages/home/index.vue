@@ -1,8 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import WmqFlatButton from '@/components/wmq-ui/wmq-button/wmq-flat-button.vue';
+</script>
 
 <template>
     <div class="home-w">
-        <div class="home-container"></div>
+        <div class="home-container">
+            <form class="form-one">
+                <WmqFlatButton>无服务器模式</WmqFlatButton>
+                <WmqFlatButton>有服务器模式</WmqFlatButton>
+            </form>
+        </div>
     </div>
 </template>
 
@@ -19,12 +26,26 @@
 
 .home-container {
     margin: 0 auto;
-    max-width: 1000px;
+    max-width: 66em;
     height: 100%;
-    // background-color: pink;
 
-    h1 {
-        font-family: '寒蝉团圆体 Sans', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .form-one {
+        width: 40%;
+        height: 60%;
+        padding: 3em;
+        background-color: pink;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        button {
+            font-family: 'baotuxiaobaiti', cursive;
+        }
     }
 }
 </style>
