@@ -6,6 +6,8 @@ import WmqFlatButton from './components/wmq-button/wmq-flat-button.vue';
 import WmqZoosemyFlatButton from './components/wmq-button/wmq-zoosemy-flat-button.vue';
 import WmqLoading from './components/wmq-loading/index.vue';
 import WmqDialog from './components/wmq-dialog/index.vue';
+import WmqMenu from './components/wmq-menu/index.vue';
+import type { TWmqMebuItem } from './components/wmq-menu/config';
 
 export {
     WmqButton,
@@ -16,4 +18,7 @@ export {
     WmqDialog,
     WmqLoading,
     WmqMessage,
+    WmqMenu,
 };
+
+export type { TWmqMebuItem };
