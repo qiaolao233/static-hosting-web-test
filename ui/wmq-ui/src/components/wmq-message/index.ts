@@ -6,6 +6,11 @@ import WmqMessageMethod from './message-method.vue';
  */
 
 /**
+ * 消息之间的间隔
+ */
+const gap = 16;
+
+/**
  * 储存多个消息实例，并在某个xiao
  */
 const messageInstances: VNode[] = [];
@@ -33,7 +38,7 @@ export const $wmqMessage = (props: TMessageProps) => {
     };
     let verticalOffset = 20;
     messageInstances.forEach((item) => {
-        verticalOffset += (item.el?.offsetHeight ?? 0) + 16;
+        verticalOffset += (item.el?.offsetHeight ?? 0) + gap;
     });
     const vnode = h(WmqMessageMethod, {
         ...props,
@@ -59,21 +64,28 @@ const close = (vnode_id: number) => {
         (item) => item.component!.props.id === vnode_id,
     );
     if (index === -1) return;
-    const vm = messageInstances[index];
-    const removedHeight = vm.el!.offsetHeight;
+    // const vm = messageInstances[index];
+    // const removedHeight = vm.el!.offsetHeight;
 
     messageInstances.splice(index, 1);
 
     const len = messageInstances.length;
     if (len === 0) return;
 
-    for (let i = 0; i < len; i++) {
-        // TODO Why when using `offsetHeight` will cause bug? And use `style.top` it will be ok?
-        const pos =
-            parseInt(messageInstances[i].el!.style.top, 10) -
-            removedHeight -
-            16;
+    let verticalOffset = 20;
+    messageInstances.forEach((item) => {
+        item.component!.props.offset = verticalOffset;
 
-        messageInstances[i].component!.props.offset = pos;
-    }
+        verticalOffset += (item.el?.offsetHeight ?? 0) + gap;
+    });
+
+    // for (let i = 0; i < len; i++) {
+    //     // TODO Why when using `offsetHeight` will cause bug? And use `style.top` it will be ok?
+    //     const pos =
+    //         parseInt(messageInstances[i].el!.style.top, 10) -
+    //         removedHeight -
+    //         gap;
+
+    //     messageInstances[i].component!.props.offset = pos;
+    // }
 };
