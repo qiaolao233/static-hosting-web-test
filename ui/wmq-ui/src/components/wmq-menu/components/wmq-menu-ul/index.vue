@@ -2,10 +2,11 @@
 import { TWmqMebuItem } from '../../config';
 
 type TWmqMebuProps = {
+    isOpen?: boolean;
     dataId?: string;
     menuList: TWmqMebuItem[];
 };
-const { menuList, dataId = '' } = defineProps<TWmqMebuProps>();
+const { menuList, dataId = '', isOpen = false } = defineProps<TWmqMebuProps>();
 const setDataId = (item: TWmqMebuItem): string => {
     return [dataId, item.value].filter(Boolean).join('_');
 };
@@ -15,17 +16,20 @@ defineOptions({
 </script>
 
 <template>
-    <ul>
-        <li v-for="item in menuList" :key="item.value">
-            <p :data-id="setDataId(item)">{{ item.label }}</p>
-            <template v-if="item.children && item.isOpen">
-                <wmq-menu-ul
-                    :menuList="item.children"
-                    :dataId="setDataId(item)"
-                />
-            </template>
-        </li>
-    </ul>
+    <div :class="['wmq-menu-ul_div', isOpen ? '' : 'wmq-menu-ul_div--hidden']">
+        <ul>
+            <li v-for="item in menuList" :key="item.value">
+                <p :data-id="setDataId(item)">{{ item.label }}</p>
+                <template v-if="item.children">
+                    <wmq-menu-ul
+                        :isOpen="item.isOpen"
+                        :menuList="item.children"
+                        :dataId="setDataId(item)"
+                    />
+                </template>
+            </li>
+        </ul>
+    </div>
 </template>
 
-<style></style>
+<style lang="scss" scoped></style>

@@ -20,9 +20,27 @@ const menuClick = (evt: MouseEvent) => {
 </script>
 
 <template>
-    <div @click="menuClick">
-        <WmqMenuUl :menuList="menuList" />
+    <div class="wmq-menu-w" @click="menuClick">
+        <WmqMenuUl :menuList="menuList" isOpen />
     </div>
 </template>
 
-<style></style>
+<style lang="scss" scoped>
+.wmq-menu-w {
+    width: 100%;
+    height: 100%;
+    // height: auto; 动画
+    :deep(.wmq-menu-ul_div) {
+        display: grid;
+        grid-template-rows: 1fr;
+        overflow: hidden;
+        transition: 0.3s;
+        &.wmq-menu-ul_div--hidden {
+            grid-template-rows: 0fr;
+        }
+        > ul {
+            min-height: 0;
+        }
+    }
+}
+</style>

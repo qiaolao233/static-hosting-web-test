@@ -20,5 +20,6 @@ const menuClick = (ids: string[]) => {
 <style scoped lang="scss">
 .left-side {
     background-color: pink;
+    font-family: 'baotuxiaobaiti', cursive;
 }
 </style>
