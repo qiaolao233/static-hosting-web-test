@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { WmqFlatButton } from '@wmq/wmq-ui';
-import { $wmqMessage } from '@/components/wmq-ui/wmq-message';
+import { $wmqMessage } from '@wmq/wmq-ui';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();

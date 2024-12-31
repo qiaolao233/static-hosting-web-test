@@ -1,16 +1,19 @@
 <script setup lang="ts">
-import WmqMessage from '@/components/wmq-ui/wmq-message/index.vue';
-import WmqButton from '@/components/wmq-ui/wmq-button/index.vue';
-import WmqZoosemyButton from '@/components/wmq-ui/wmq-button/wmq-zoosemy-button.vue';
-import WmqFlatButton from '@/components/wmq-ui/wmq-button/wmq-flat-button.vue';
-import WmqZoosemyFlatButton from '@/components/wmq-ui/wmq-button/wmq-zoosemy-flat-button.vue';
+import {
+    WmqMessage,
+    WmqButton,
+    WmqZoosemyButton,
+    WmqFlatButton,
+    WmqZoosemyFlatButton,
+    WmqLoading,
+    WmqDialog,
+    $wmqMessage,
+} from '@wmq/wmq-ui';
 import BackgroundImageBlead from '@/components/wmq-test/background-image-blend/index.vue';
 import ScratchesImg from '@/components/wmq-test/background-image-blend/scratches-img.vue';
 import MixBlendImg from '@/components/wmq-test/background-image-blend/mix-blend-img.vue';
-import WmqLoading from '@/components/wmq-ui/wmq-loading/index.vue';
-import WmqDialog from '@/components/wmq-ui/wmq-dialog/index.vue';
 import { ref } from 'vue';
-import { $wmqMessage } from '@/components/wmq-ui/wmq-message';
+
 const openMessage = () => {
     $wmqMessage({
         content: '提示',
