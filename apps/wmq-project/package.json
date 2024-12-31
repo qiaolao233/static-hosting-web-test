@@ -12,5 +12,9 @@
     },
     "keywords": [],
     "author": "",
+    "dependencies": {
+        "@wmq/wmq-kss": "workspace:^",
+        "@wmq/wmq-utils": "workspace:^"
+    },
     "license": "ISC"
 }
