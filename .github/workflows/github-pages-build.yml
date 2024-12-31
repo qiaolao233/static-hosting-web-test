@@ -31,10 +31,10 @@ jobs:
             - name: 安装依赖和项目打包
               run: |
                   pnpm i
-                  pnpm build
+                  pnpm wmq-project build
 
             - name: 项目部署到 github pages
               uses: JamesIves/github-pages-deploy-action@v4
               with:
                   branch: gh-pages
-                  folder: dist
+                  folder: app/wmq-project/dist
