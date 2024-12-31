@@ -48,6 +48,9 @@ importers:
       '@wmq/wmq-kss':
         specifier: workspace:^
         version: link:../../packages/wmq-kss
+      '@wmq/wmq-ui':
+        specifier: workspace:^
+        version: link:../../ui/wmq-ui
       '@wmq/wmq-utils':
         specifier: workspace:^
         version: link:../../packages/wmq-utils
@@ -62,6 +65,8 @@ importers:
         version: 3.1.0
 
   packages/wmq-utils: {}
+
+  ui/wmq-ui: {}
 
 packages:
 

@@ -14,6 +14,7 @@
     "author": "",
     "dependencies": {
         "@wmq/wmq-kss": "workspace:^",
+        "@wmq/wmq-ui": "workspace:^",
         "@wmq/wmq-utils": "workspace:^"
     },
     "license": "ISC"

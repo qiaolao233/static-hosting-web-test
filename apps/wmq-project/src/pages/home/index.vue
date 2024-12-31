@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import WmqFlatButton from '@/components/wmq-ui/wmq-button/wmq-flat-button.vue';
+import { WmqFlatButton } from '@wmq/wmq-ui';
 import { $wmqMessage } from '@/components/wmq-ui/wmq-message';
 import { useRouter } from 'vue-router';
 
