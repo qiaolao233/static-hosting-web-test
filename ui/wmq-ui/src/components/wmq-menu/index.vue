@@ -3,21 +3,25 @@ import { TWmqMebuItem } from './config';
 import WmqMenuUl from './components/wmq-menu-ul/index.vue';
 
 type TWmqMebuProps = {
-    list: TWmqMebuItem[];
+    menuList: TWmqMebuItem[];
 };
-const { list } = defineProps<TWmqMebuProps>();
+const { menuList } = defineProps<TWmqMebuProps>();
+const emit = defineEmits<{
+    menuClick: [path: string[]];
+}>();
 
 const menuClick = (evt: MouseEvent) => {
     const target = evt.target as HTMLElement;
     if (target.tagName === 'P') {
-        console.log('Clicked item:', target.dataset.id);
+        const ids = target.dataset.id?.split('_') ?? [];
+        emit('menuClick', ids);
     }
 };
 </script>
 
 <template>
     <div @click="menuClick">
-        <WmqMenuUl :list="list" />
+        <WmqMenuUl :menuList="menuList" />
     </div>
 </template>
 

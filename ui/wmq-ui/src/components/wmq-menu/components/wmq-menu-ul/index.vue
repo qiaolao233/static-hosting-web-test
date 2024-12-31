@@ -3,9 +3,9 @@ import { TWmqMebuItem } from '../../config';
 
 type TWmqMebuProps = {
     dataId?: string;
-    list: TWmqMebuItem[];
+    menuList: TWmqMebuItem[];
 };
-const { list, dataId = '' } = defineProps<TWmqMebuProps>();
+const { menuList, dataId = '' } = defineProps<TWmqMebuProps>();
 const setDataId = (item: TWmqMebuItem): string => {
     return [dataId, item.value].filter(Boolean).join('_');
 };
@@ -16,10 +16,13 @@ defineOptions({
 
 <template>
     <ul>
-        <li v-for="item in list" :key="item.value">
+        <li v-for="item in menuList" :key="item.value">
             <p :data-id="setDataId(item)">{{ item.label }}</p>
-            <template v-if="item.children">
-                <wmq-menu-ul :list="item.children" :dataId="setDataId(item)" />
+            <template v-if="item.children && item.isOpen">
+                <wmq-menu-ul
+                    :menuList="item.children"
+                    :dataId="setDataId(item)"
+                />
             </template>
         </li>
     </ul>
