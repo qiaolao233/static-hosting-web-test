@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 import { CSSProperties, onMounted, ref, watch } from 'vue';
-import { wmqSleep } from '@/utils';
+import { wmqSleep } from '@wmq/wmq-utils';
 
 type TMessageMethodProps = {
     id: number;

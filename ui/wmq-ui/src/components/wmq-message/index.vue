@@ -7,7 +7,7 @@
 <script setup lang="ts">
 import { CSSProperties, onMounted, ref } from 'vue';
 import { TMessageProps } from './configs';
-import { wmqSleep } from '@/utils';
+import { wmqSleep } from '@wmq/wmq-utils';
 
 const props = defineProps<TMessageProps>();
 
