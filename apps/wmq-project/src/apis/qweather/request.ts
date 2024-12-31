@@ -1,6 +1,12 @@
-const baseUrl = '';
+/**
+ * 免费订阅 api
+ */
+const baseUrl = 'https://devapi.qweather.com/';
 
-const tokenFetch = async <T = unknown>(
+/**
+ * 在 apipost 中 定义 和风天气请求实例
+ */
+const qweatherFetch = async <T = unknown>(
     url: string,
     body?: Record<string, any>,
     init?: RequestInit,
@@ -25,3 +31,5 @@ const tokenFetch = async <T = unknown>(
     const responseJson: T = await response.json();
     return responseJson;
 };
+
+export default qweatherFetch;
