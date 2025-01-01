@@ -2,6 +2,7 @@
 import { WmqFlatButton } from '@wmq/wmq-ui';
 import { $wmqMessage } from '@wmq/wmq-ui';
 import { useRouter } from 'vue-router';
+import StarrySky from './components/starry-sky/index.vue';
 
 const router = useRouter();
 
@@ -15,14 +16,18 @@ const onUsedServer = () => {
 
 <template>
     <div class="home-w">
-        <div class="home-container">
-            <form class="form-one" @submit.prevent>
-                <WmqFlatButton @click="onNoServer">无服务器模式</WmqFlatButton>
-                <WmqFlatButton @click="onUsedServer">
-                    有服务器模式
-                </WmqFlatButton>
-            </form>
-        </div>
+        <StarrySky>
+            <div class="home-container">
+                <form class="form-one" @submit.prevent>
+                    <WmqFlatButton @click="onNoServer"
+                        >无服务器模式</WmqFlatButton
+                    >
+                    <WmqFlatButton @click="onUsedServer">
+                        有服务器模式
+                    </WmqFlatButton>
+                </form>
+            </div>
+        </StarrySky>
     </div>
 </template>
 
@@ -30,11 +35,6 @@ const onUsedServer = () => {
 .home-w {
     width: 100vw;
     height: 100vh;
-    background-image: url('https://fastly.picsum.photos/id/131/4698/3166.jpg?hmac=DpRHYso0tlQQ8HzsmRHNTSWfbMaTdHq58UciPSggCY8');
-    background-color: hsl(65, 60%, 81%);
-    background-size: cover;
-    background-position: bottom;
-    background-repeat: no-repeat;
 }
 
 .home-container {
