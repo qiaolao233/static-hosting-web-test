@@ -12,12 +12,16 @@ const routes: Readonly<RouteRecordRaw[]> = [
         children: [
             {
                 path: '/no-server',
-                redirect: '/no-server/game',
+                redirect: '/no-server/immortal-saying',
             },
             {
-                path: 'game',
+                path: 'immortal-saying',
                 component: () =>
-                    import('@/pages/no-server/no-server-game/index.vue'),
+                    import('@/pages/no-server/immortal-saying/index.vue'),
+            },
+            {
+                path: 'my-game',
+                component: () => import('@/pages/no-server/my-game/index.vue'),
             },
         ],
     },
