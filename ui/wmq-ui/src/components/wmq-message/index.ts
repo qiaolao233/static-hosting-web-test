@@ -22,6 +22,7 @@ let seed = 0;
 
 /**
  * 通过函数来生成 vue 组件
+ * todo: 后续通过消息队列进行改造和解耦
  */
 export const $wmqMessage = (props: TMessageProps) => {
     let id = seed++;

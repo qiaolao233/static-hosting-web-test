@@ -29,17 +29,30 @@ const menuClick = (evt: MouseEvent) => {
 .wmq-menu-w {
     width: 100%;
     height: 100%;
+    padding: 0 0.5em;
     // height: auto; 动画
     :deep(.wmq-menu-ul_div) {
         display: grid;
         grid-template-rows: 1fr;
         overflow: hidden;
         transition: 0.3s;
+        .wmq-menu-ul_div {
+            padding-left: 0.5em;
+            // padding-bottom: 0.5em;
+        }
         &.wmq-menu-ul_div--hidden {
             grid-template-rows: 0fr;
+            padding-bottom: 0;
         }
-        > ul {
+        > .wmq-menu-ul_ul {
             min-height: 0;
+            .wmq-menu-ul_p {
+                border-radius: 0.2em;
+                padding: 0.2em 0.3em;
+                // border: 1px solid #000;
+                cursor: pointer;
+                background-color: skyblue;
+            }
         }
     }
 }

@@ -17,9 +17,11 @@ defineOptions({
 
 <template>
     <div :class="['wmq-menu-ul_div', isOpen ? '' : 'wmq-menu-ul_div--hidden']">
-        <ul>
+        <ul class="wmq-menu-ul_ul">
             <li v-for="item in menuList" :key="item.value">
-                <p :data-id="setDataId(item)">{{ item.label }}</p>
+                <p class="wmq-menu-ul_p" :data-id="setDataId(item)">
+                    {{ item.label }}
+                </p>
                 <template v-if="item.children">
                     <wmq-menu-ul
                         :isOpen="item.isOpen"

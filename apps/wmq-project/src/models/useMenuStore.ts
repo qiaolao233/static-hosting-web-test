@@ -5,10 +5,6 @@ import { TWmqMebuItem } from '@wmq/wmq-ui';
 export const useMenuStore = defineStore('menuStore', () => {
     const menuList = ref<TWmqMebuItem[]>([
         {
-            label: '仙尊语录',
-            value: 'icon-shouye',
-        },
-        {
             label: '我的游戏',
             value: 'my-game',
             children: [
@@ -25,6 +21,10 @@ export const useMenuStore = defineStore('menuStore', () => {
                     value: 'game-3',
                 },
             ],
+        },
+        {
+            label: '仙尊语录',
+            value: 'icon-shouye',
         },
     ]);
 
