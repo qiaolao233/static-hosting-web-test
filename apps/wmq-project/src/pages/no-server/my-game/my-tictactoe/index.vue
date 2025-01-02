@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-    <div class="no-server-game"><RouterView /></div>
+    <div class="my-tictactoe">my-tictactoe</div>
 </template>
 
 <style scoped lang="scss">

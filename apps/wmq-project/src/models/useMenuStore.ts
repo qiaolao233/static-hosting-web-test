@@ -17,8 +17,8 @@ export const useMenuStore = defineStore('menuStore', () => {
             value: 'my-game',
             children: [
                 {
-                    label: '游戏1',
-                    value: 'game-1',
+                    label: '井字棋',
+                    value: 'my-tictactoe',
                 },
                 {
                     label: '游戏2',
@@ -33,18 +33,22 @@ export const useMenuStore = defineStore('menuStore', () => {
     ]);
 
     const menuClick = (ids: string[]) => {
+        let menuListClone: TWmqMebuItem[] = menuList.value;
         let findMenuItem: TWmqMebuItem | undefined = void 0;
-        while (ids.length > 0) {
-            const id = ids.shift();
+        let idsClone = [...ids];
+        while (idsClone.length > 0) {
+            const id = idsClone.shift();
             if (id) {
-                findMenuItem = menuList.value.find((item) => item.value === id);
+                findMenuItem = menuListClone.find((item) => item.value === id);
                 if (!findMenuItem) break;
+                menuListClone = findMenuItem.children ?? [];
             }
         }
 
         if (findMenuItem && findMenuItem.children) {
             findMenuItem.isOpen = !findMenuItem.isOpen;
         }
+        return findMenuItem;
     };
 
     return { menuList, menuClick };

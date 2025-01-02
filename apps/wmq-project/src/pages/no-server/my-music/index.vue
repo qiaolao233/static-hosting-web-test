@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-    <div class="no-server-game"><RouterView /></div>
+    <div class="my-music">my-music</div>
 </template>
 
 <style scoped lang="scss">

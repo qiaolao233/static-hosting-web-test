@@ -22,6 +22,19 @@ const routes: Readonly<RouteRecordRaw[]> = [
             {
                 path: 'my-game',
                 component: () => import('@/pages/no-server/my-game/index.vue'),
+                children: [
+                    {
+                        path: 'my-tictactoe',
+                        component: () =>
+                            import(
+                                '@/pages/no-server/my-game/my-tictactoe/index.vue'
+                            ),
+                    },
+                ],
+            },
+            {
+                path: 'my-music',
+                component: () => import('@/pages/no-server/my-music/index.vue'),
             },
         ],
     },
