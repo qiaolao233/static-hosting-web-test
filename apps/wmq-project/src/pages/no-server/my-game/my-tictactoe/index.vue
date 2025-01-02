@@ -1,17 +1,47 @@
 <script setup lang="ts">
 import { intMyTictactoe } from '@wmq-games/my-tictactoe';
-import { onMounted, ref } from 'vue';
+import MyTictactoe from '@wmq-games/my-tictactoe/src/utils/class/my-tictactoe';
+import { onMounted, onUnmounted, ref } from 'vue';
 
 const canvasRef = ref<HTMLCanvasElement>();
 const dialogRef = ref<HTMLDialogElement>();
+let myTictactoe: MyTictactoe | undefined = void 0;
 onMounted(() => {
     if (canvasRef.value && dialogRef.value) {
-        intMyTictactoe(canvasRef.value, dialogRef.value);
+        myTictactoe = intMyTictactoe({
+            canvasRef: canvasRef.value!,
+            initPoint: {
+                x: 20,
+                y: 20,
+            },
+            renderSize: {
+                width: 240,
+                height: 240,
+            },
+            canvasSize: {
+                width: 300,
+                height: 300,
+            },
+            winFunc: () => {
+                dialogRef.value?.showModal();
+            },
+            failFunc() {
+                console.log('---------------->failFunc');
+            },
+        });
+
+        if (!myTictactoe) return;
+
+        myTictactoe.cleanBackgrond().drawBackground();
     }
+});
+onUnmounted(() => {
+    myTictactoe?.destructor();
 });
 const onDialogClose = () => {
     if (dialogRef.value) {
         dialogRef.value.close();
+        myTictactoe?.cleanBackgrond().drawBackground();
     }
 };
 </script>
