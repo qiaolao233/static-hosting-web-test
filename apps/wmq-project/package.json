@@ -13,6 +13,7 @@
     "keywords": [],
     "author": "",
     "dependencies": {
+        "@wmq-games/my-tictactoe": "workspace:^",
         "@wmq/wmq-kss": "workspace:^",
         "@wmq/wmq-ui": "workspace:^",
         "@wmq/wmq-utils": "workspace:^"
