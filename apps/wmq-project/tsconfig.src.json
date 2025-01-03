@@ -5,9 +5,9 @@
         "lib": ["ESNext", "DOM"],
         "types": [],
         "noEmit": true,
-        "baseUrl": "src",
+        "baseUrl": ".",
         "paths": {
-            "@/*": ["./*"] // 设置路径别名，例如：@/components 会被解析为 src/components
+            "@/*": ["./src/*"] // 设置路径别名，例如：@/components 会被解析为 src/components
         }
     },
     "include": ["./src"]

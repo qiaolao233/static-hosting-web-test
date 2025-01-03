@@ -307,7 +307,8 @@ class MyTictactoe {
     }
 
     private isFail(): boolean {
-        return false;
+        const points = this.points;
+        return !points.some((item) => item.some((i) => i === 0));
     }
 }
 

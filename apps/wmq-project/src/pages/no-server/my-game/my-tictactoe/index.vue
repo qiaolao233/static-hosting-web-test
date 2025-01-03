@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { intMyTictactoe } from '@wmq-games/my-tictactoe';
 import MyTictactoe from '@wmq-games/my-tictactoe/src/utils/class/my-tictactoe';
+import { $wmqMessage } from '@wmq/wmq-ui';
 import { onMounted, onUnmounted, ref } from 'vue';
 
 const canvasRef = ref<HTMLCanvasElement>();
@@ -26,13 +27,12 @@ onMounted(() => {
                 dialogRef.value?.showModal();
             },
             failFunc() {
-                console.log('---------------->failFunc');
+                $wmqMessage({ content: '平局' });
+                myTictactoe?.cleanBackgrond().drawBackground();
             },
         });
 
-        if (!myTictactoe) return;
-
-        myTictactoe.cleanBackgrond().drawBackground();
+        myTictactoe?.cleanBackgrond().drawBackground();
     }
 });
 onUnmounted(() => {
