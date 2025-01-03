@@ -1,0 +1,1 @@
+import{_ as c}from"./plugin-vueexport-helper-DlAUqK2U.js";import{c as e,o}from"./index-CL20cr0g.js";const s={},t={class:"my-music"};function r(_,n){return o(),e("div",t,"my-music")}const i=c(s,[["render",r],["__scopeId","data-v-9b8e43c5"]]);export{i as default};

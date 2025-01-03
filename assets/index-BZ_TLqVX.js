@@ -1,1 +1,0 @@
-import{_ as e}from"./plugin-vueexport-helper-DlAUqK2U.js";import{c as o,a as r}from"./index-BZw8KBWc.js";const c={},s={class:"no-server-game"};function a(t,n){return r(),o("div",s,"no-server-game")}const f=e(c,[["render",a],["__scopeId","data-v-f2b2a07d"]]);export{f as default};

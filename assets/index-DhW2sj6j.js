@@ -1,0 +1,1 @@
+import{_ as e}from"./plugin-vueexport-helper-DlAUqK2U.js";import{c as o,o as a}from"./index-CL20cr0g.js";const c={},r={class:"no-server-game"};function s(t,n){return a(),o("div",r,"immortal-saying")}const m=e(c,[["render",s],["__scopeId","data-v-96b96a4a"]]);export{m as default};

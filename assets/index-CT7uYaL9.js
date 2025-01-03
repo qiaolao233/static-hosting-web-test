@@ -1,0 +1,1 @@
+import{_ as o}from"./plugin-vueexport-helper-DlAUqK2U.js";import{c as t,b as c,o as r,i as s}from"./index-CL20cr0g.js";const n={},a={class:"no-server-game"};function _(d,i){const e=s("RouterView");return r(),t("div",a,[c(e)])}const p=o(n,[["render",_],["__scopeId","data-v-c5848f2d"]]);export{p as default};
