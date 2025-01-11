@@ -9,6 +9,7 @@
         "wmq-project": "pnpm -F wmq-project",
         "wmq-kss": "pnpm -F @wmq/wmq-kss",
         "wmq-utils": "pnpm -F @wmq/wmq-utils",
+        "wmq-express": "pnpm -F @wmq/wmq-express",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [],
@@ -21,6 +22,7 @@
         "postcss-preset-env": "^10.1.2",
         "prettier": "^3.4.2",
         "sass": "^1.83.0",
+        "tsx": "^4.19.2",
         "typescript": "^5.6.2",
         "vite": "^5.4.5"
     },
